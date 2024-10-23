@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Timbrature</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registrazione Timbratura</h1>
+        <form id="timbraturaForm">
+            <input type="text" id="codiceMatricola" placeholder="Codice Matricola" required />
+            <input type="text" id="progetto" placeholder="Progetto" required />
+            <select id="tipoAttivita" required>
+                <option value="">Seleziona Tipo Attività</option>
+                <!-- Le opzioni delle attività verranno caricate dinamicamente -->
+            </select>
+            <select id="fase" required>
+                <option value="">Seleziona Fase</option>
+                <!-- Le opzioni delle fasi verranno caricate dinamicamente -->
+            </select>            
+            <select id="timbratore" required>
+                <option value="">Seleziona Timbratore</option>
+                <!-- Le opzioni dei timbratori verranno caricate dinamicamente -->
+            </select>
+            <select id="tipoTimbratura" required>
+                <option value="ENTRATA">Entrata</option>
+                <option value="USCITA">Uscita</option>
+            </select>
+            <textarea id="descrizione" placeholder="Descrizione (opzionale)"></textarea>
+            <button type="submit">Timbra</button>
+        </form>
+
+        <h2>Ricerca Timbrature</h2>
+        <input type="text" id="searchCodiceMatricola" placeholder="Codice Matricola per ricerca" />
+        <button id="searchButton">Cerca</button>
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
