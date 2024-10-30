@@ -1,0 +1,147 @@
+/* Reset CSS di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    /* Colore di sfondo chiaro */
+    color: #333;
+    /* Colore del testo */
+    padding: 20px;
+}
+
+/* Stile del titolo principale */
+h1 {
+    text-align: center;
+    color: #003366;
+    /* Blu scuro */
+    margin-bottom: 20px;
+}
+
+/* Stile del modulo */
+form {
+    background: #ffffff;
+    /* Sfondo bianco per il modulo */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    /* Larghezza massima del modulo */
+    margin: auto;
+    /* Centra il modulo */
+}
+
+/* Stile delle etichette */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    /* Forza le etichette a essere su una nuova riga */
+}
+
+#incomplete-timbratura-banner {
+    background: yellow;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* Stile degli input */
+input[type="text"],
+input[type="datetime-local"],
+select {
+    width: 100%;
+    /* Occupa tutta la larghezza disponibile */
+    padding: 10px;
+    margin-bottom: 15px;
+    /* Spazio tra i campi */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Stile dei suggerimenti */
+#progetto-suggestions,
+#attivita-suggestions,
+#fase-suggestions,
+#fase-suggestions {
+    border: 1px solid #ccc;
+    display: none;
+    /* Nascondi i suggerimenti inizialmente */
+    position: absolute;
+    background: white;
+    z-index: 1000;
+    /* Mostra sopra altri elementi */
+    border-radius: 4px;
+    /* Raggio angoli */
+    max-height: 200px;
+    /* Altezza massima */
+    overflow-y: auto;
+    /* Aggiungi scroll se ci sono troppi suggerimenti */
+}
+
+/* Stile per ciascun suggerimento */
+#progetto-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#progetto-suggestions div:hover {
+    background-color: #ffcc00;
+    /* Colore giallo per il passaggio del mouse */
+}
+
+#attivita-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#attivita-suggestions div:hover {
+    background-color: #ffcc00;
+    /* Colore giallo per il passaggio del mouse */
+}
+
+#fase-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#fase-suggestions div:hover {
+    background-color: #ffcc00;
+    /* Colore giallo per il passaggio del mouse */
+}
+
+
+
+/* Stile per il pulsante di invio */
+button {
+    background-color: #003366;
+    /* Blu scuro */
+    color: white;
+    /* Testo bianco */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    /* Transizione per il colore di sfondo */
+    width: 100%;
+    /* Occupa tutta la larghezza disponibile */
+}
+
+button:hover {
+    background-color: #005599;
+    /* Blu più chiaro al passaggio del mouse */
+}
+
+/* Stile per la gestione degli errori */
+.error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}

@@ -1,0 +1,58 @@
+<!--frontend\index.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form di Timbratura</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="incomplete-timbratura-banner" style="display: none;">
+        <p>Esiste una timbratura </p>
+        <button id="loadIncompleteTimbratura">
+            Carica Timbratura Incompleta
+        </button>
+    </div>
+    <h1>Inserisci le tue timbrature</h1>
+    <form id="timbraturaForm">
+        <label for="codice_matricola">Codice Matricola:</label>
+        <input type="text" id="codice_matricola" name="codice_matricola" required /><br /><br />
+
+        <label for="progetto">Progetto:</label>
+        <input type="text" id="progetto" name="progetto" required autocomplete="off" /><br /><br />
+        <div id="progetto-suggestions"></div>
+
+        <input type="hidden" id="id_progetto" name="id_progetto" />
+
+        <label for="timbratore">Timbratore:</label>
+        <select id="timbratore" name="timbratore" required>
+            <option value="">Seleziona un timbratore</option>
+        </select><br /><br />
+
+        <label for="attivita">Tipo Attività:</label>
+        <input type="text" id="attivita" name="attivita" required /><br /><br />
+        <div id="attivita-suggestions"></div>
+
+        <label for="fase">Fase:</label>
+        <input type="text" id="fase" name="fase" required /><br /><br />
+        <div id="fase-suggestions"></div>
+
+        <label for="ora_inizio">Ora Inizio:</label>
+        <input type="datetime-local" id="ora_inizio" name="ora_inizio" required /><br /><br />
+
+        <label for="ora_fine">Ora Fine:</label>
+        <input type="datetime-local" id="ora_fine" name="ora_fine" /><br /><br />
+
+        <label for="descrizione">Descrizione:</label>
+        <input type="text" id="descrizione" name="descrizione" /><br /><br />
+
+        <button type="submit">Invia</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
