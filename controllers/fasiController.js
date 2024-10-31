@@ -1,4 +1,4 @@
-const supabase = require('../services/supabaseClient');
+const supabase = require('../services/supabase');
 
 exports.getFasi = async (req, res) => {
     const searchTerm = req.query.search || '';

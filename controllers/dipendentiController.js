@@ -1,4 +1,4 @@
-const supabase = require('../services/supabaseClient');
+const supabase = require('../services/supabase');
 
 exports.getDipendenteFase = async (req, res) => {
     const { codice_matricola } = req.query;

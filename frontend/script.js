@@ -1,3 +1,5 @@
+// frontend/script.js
+
 document.addEventListener("DOMContentLoaded", async () => {
     const progettoInput = document.getElementById("progetto");
     const progettoSuggestionsDiv = document.getElementById("progetto-suggestions");
@@ -224,5 +226,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 alert(data.message || "Timbratura completata con successo");
             })
             .catch((error) => console.error("Errore nella timbratura:", error));
-    };
+            //reset form
+            document.getElementById("timbraturaForm").reset();
+            
+        };
 });

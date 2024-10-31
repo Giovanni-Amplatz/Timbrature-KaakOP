@@ -1,4 +1,4 @@
-const supabase = require('../services/supabaseClient');
+const supabase = require('../services/supabase');
 
 exports.getTimbratureIncomplete = async (req, res) => {
     const { codice_matricola } = req.query;
@@ -35,8 +35,6 @@ exports.getTimbratureIncomplete = async (req, res) => {
         res.status(500).json({ error: 'Errore durante la verifica della timbratura incompleta.' });
     }
 };
-
-// Altri metodi come createTimbratura e updateTimbratura...
 
 exports.createTimbratura = async (req, res) => {
     const { codice_matricola, ora_inizio, ora_fine, timbratore, attivita, fase, id_progetto, descrizione } = req.body;

@@ -1,4 +1,4 @@
-const supabase = require('../services/supabaseClient');
+const supabase = require('../services/supabase');
 
 exports.getTimbratori = async (req, res) => {
     try {

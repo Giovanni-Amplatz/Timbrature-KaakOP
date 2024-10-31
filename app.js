@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const supabase = require('./services/supabaseClient'); // Importa il client Supabase
+const supabase = require('./services/supabase'); // Importa il client Supabase
 const apiRoutes = require('./routes/api'); // Importa le rotte API
 
 const app = express();

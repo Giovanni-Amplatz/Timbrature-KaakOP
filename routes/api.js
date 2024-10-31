@@ -8,7 +8,6 @@ const progettiController = require('../controllers/progettiController');
 const timbratoriController = require('../controllers/timbratoriController');
 const timbratureController = require('../controllers/timbratureController');
 
-// Definisci le rotte qui
 router.get('/progetti', progettiController.getProgetti); 
 router.get('/attivita', attivitaController.getAttivita); 
 router.get('/timbrature/incomplete', timbratureController.getTimbratureIncomplete);
