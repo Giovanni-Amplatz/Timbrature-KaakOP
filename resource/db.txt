@@ -1,0 +1,59 @@
+create table
+  public.progetti (
+    id_progetto integer not null,
+    nome_progetto character varying(100) null,
+    constraint progetti_pkey primary key (id_progetto)
+  ) tablespace pg_default;
+
+  create table
+  public.timbratori (
+    id_timbratore integer not null,
+    nome_timbratore character varying(100) null,
+    constraint timbratori_pkey primary key (id_timbratore)
+  ) tablespace pg_default;
+
+  create table
+  public.fasi (
+    id_fase integer not null,
+    nome_fase character varying(100) null,
+    constraint fasi_pkey primary key (id_fase)
+  ) tablespace pg_default;
+
+  create table
+  public.dipendenti (
+    id_dipendente integer not null,
+    codice_matricola character varying(50) not null,
+    nome character varying(100) null,
+    cognome character varying(100) null,
+    fase integer null,
+    constraint dipendenti_pkey primary key (id_dipendente),
+    constraint dipendenti_fase_fkey foreign key (fase) references fasi (id_fase)
+  ) tablespace pg_default;
+
+  create table
+  public.tipo_attivita (
+    id_attivita integer not null,
+    nome_attivita character varying(100) null,
+    id_progetto integer null,
+    constraint tipo_attivita_pkey primary key (id_attivita),
+    constraint tipo_attivita_id_progetto_fkey foreign key (id_progetto) references progetti (id_progetto)
+  ) tablespace pg_default;
+
+  create table
+  public.timbrature (
+    id_timbratura integer not null default nextval('timbrature_id_timbratura_seq'::regclass),
+    id_dipendente integer null,
+    id_progetto integer null,
+    id_attivita integer null,
+    id_fase integer null,
+    id_timbratore integer null,
+    ora_inizio timestamp with time zone null,
+    descrizione character varying(255) null,
+    ora_fine timestamp with time zone null,
+    constraint timbrature_pkey primary key (id_timbratura),
+    constraint timbrature_id_attivita_fkey foreign key (id_attivita) references tipo_attivita (id_attivita),
+    constraint timbrature_id_dipendente_fkey foreign key (id_dipendente) references dipendenti (id_dipendente),
+    constraint timbrature_id_fase_fkey foreign key (id_fase) references fasi (id_fase),
+    constraint timbrature_id_progetto_fkey foreign key (id_progetto) references progetti (id_progetto),
+    constraint timbrature_id_timbratore_fkey foreign key (id_timbratore) references timbratori (id_timbratore)
+  ) tablespace pg_default;
